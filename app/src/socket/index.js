@@ -1,7 +1,8 @@
 import * as io from 'socket.io-client/socket.io';
 import SocketEmitter from '../emitters';
+import config from '../config';
 
-const socket = io.connect('http://sfast-dev.cloudapp.net:4040/', {
+const socket = io.connect(`${config.host}:${config.port}`, {
   transports: ['websocket']
 });
 
